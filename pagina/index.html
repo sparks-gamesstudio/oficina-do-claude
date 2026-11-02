@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina do Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="oficina.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<canvas id="cena"></canvas>
+<div id="baloes"></div>
+
+<header class="topo">
+  <div class="marca"><span class="logo"></span>Oficina do Claude</div>
+  <div class="sessoes" id="sessoes"></div>
+  <div class="acoes">
+    <button id="som" title="Som da oficina">🔇 Som</button>
+  </div>
+</header>
+
+<section class="placar">
+  <div><b id="nFerr">0</b><span>ferramentas</span></div>
+  <div><b id="nArq">0</b><span>arquivos tocados</span></div>
+  <div><b id="nCmd">0</b><span>comandos</span></div>
+  <div><b id="tempo">0:00</b><span>trabalhando</span></div>
+</section>
+
+<aside class="diario">
+  <div class="diario-topo"><span>Diário de bordo</span><i id="status" class="parado">desconectado</i></div>
+  <ol id="diario"></ol>
+</aside>
+
+<div class="vazio" id="vazio">
+  <h1>A oficina está pronta.</h1>
+  <p>Use o Claude Code normalmente: ele aparece aqui assim que começar a trabalhar.</p>
+  <p class="dica">Ainda não ligou os hooks? Rode <code>node instalar.js</code> na pasta da Oficina.</p>
+</div>
+
+<div class="alerta" id="alerta" hidden><b>🔔 O Claude precisa de você</b><span id="alertaTexto"></span></div>
+
+<script type="module" src="oficina.js"></script>
+</body>
+</html>
